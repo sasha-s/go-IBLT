@@ -175,23 +175,6 @@ func TestIBLT(t *testing.T) {
 	}
 }
 
-func Test2f(t *testing.T) {
-	f := New(3, 128)
-	for i := 0; i < 100000; i++ {
-		v := []byte(fmt.Sprint(i))
-		if rand.Intn(200) == 0 {
-			f.Add(v)
-		} else {
-			f.Remove(v)
-		}
-	}
-	// spew.Dump(f.counts)
-	sort.Ints(f.counts)
-	a, b, c := f.counts[32], f.counts[64], f.counts[96]
-	q := float64(b-a) / float64(c-b)
-	spew.Println(q, 1/(1-q), a, b, c, b-a, c-b)
-}
-
 func TestBitset(t *testing.T) {
 	a := 1
 	for l := 1; l < 15000; l += a {

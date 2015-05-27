@@ -146,7 +146,7 @@ func (f *Filter) getIdxHash(b []byte) ([]int, uint64) {
 
 func (f *Filter) getIdx(hash uint64) []int {
 	f.seen.ClearAll()
-	v := xorShiftStarRound(&hash)
+	v := hash
 	bits := uint16(64)
 	for k := range f.idx {
 		for {

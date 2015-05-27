@@ -118,7 +118,7 @@ func New(k, l int) *Filter {
 		keySums:   make([]uint64, l),
 		valueSums: values,
 		counts:    make([]int, l),
-		seen:      NewBitset(l),
+		seen:      newBitSet(l),
 		shift:     shift,
 		idx:       make([]int, k),
 	}
@@ -394,7 +394,7 @@ func (b bitset) ClearAll() {
 	}
 }
 
-func NewBitset(l int) bitset {
+func newBitSet(l int) bitset {
 	return make([]uint64, (l+63)>>6)
 }
 

@@ -197,7 +197,7 @@ func TestBitset(t *testing.T) {
 	for l := 1; l < 15000; l += a {
 		a += rand.Intn(100)
 		fmt.Print(".")
-		b := NewBitset(l)
+		b := newBitSet(l)
 		b2 := map[int]bool{}
 		check := func() {
 			for pos := 0; pos < l; pos++ {

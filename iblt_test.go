@@ -70,7 +70,7 @@ func TestIBLTSub(t *testing.T) {
 						t.Errorf("k: expected %d, got %d", f.K(), i2.K())
 					}
 					if f.N() != i2.N() {
-						t.Errorf("k: expected %d, got %d", f.N(), i2.N())
+						t.Errorf("n: expected %d, got %d", f.N(), i2.N())
 					}
 
 				}
